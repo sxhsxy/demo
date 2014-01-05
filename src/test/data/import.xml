@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <table name="sys_user">
+    <column>id</column>
+    <column>login_name</column>
+    <column>password</column>
+    <column>name</column>
+    <column>gender</column>
+    <column>email</column>
+    <column>phone</column>
+    <column>mobile</column>
+    <column>remarks</column>
+    <row>
+      <value>1</value>
+      <value>xiaohu</value>
+      <value>123456</value>
+      <value>小虎</value>
+      <value>m</value>
+      <value>littletiger.shen@Gmail.com</value>
+      <value/>
+      <value>13966667777</value>
+      <null/>
+    </row>
+    <row>
+      <value>2</value>
+      <value>xiaoniao</value>
+      <value>123456</value>
+      <value>小鸟</value>
+      <value>f</value>
+      <value/>
+      <null/>
+      <null/>
+      <null/>
+    </row>
+    <row>
+      <value>3</value>
+      <value>xiaozhu</value>
+      <value>654321</value>
+      <value>小猪</value>
+      <null/>
+      <null/>
+      <null/>
+      <null/>
+      <null/>
+    </row>
+  </table>
+</dataset>
