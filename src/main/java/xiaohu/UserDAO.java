@@ -57,7 +57,7 @@ public class UserDAO extends BaseHibernateDAO  {
         log.debug("getting User instance with id: " + id);
         try {
             User instance = (User) getSession()
-                    .get("User", id);
+                    .get("xiaohu.User", id);
             return instance;
         } catch (RuntimeException re) {
             log.error("get failed", re);
