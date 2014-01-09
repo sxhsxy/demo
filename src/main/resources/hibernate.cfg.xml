@@ -6,7 +6,6 @@
 <hibernate-configuration>
 
 	<session-factory>
-		<property name="hibernate.id.new_generator_mappings" value="true" />
 		<property name="dialect">
 			org.hibernate.dialect.PostgreSQLDialect
 		</property>
