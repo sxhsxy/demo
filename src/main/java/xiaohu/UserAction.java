@@ -27,5 +27,11 @@ public class UserAction extends ActionSupport {
 	public String list() throws Exception {
 		return "list";
 	}
+	public List getUserList() {
+		return userList;
+	}
+	public void setUserList(List userList) {
+		this.userList = userList;
+	}
 
 }
