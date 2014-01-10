@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -30,11 +30,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  			<s:property value="loginName" />
 	  			
 	  			<s:property value="name" /> 
-	  			
-	  			
+	  			<s:url action='editUser' var='editUrl'>
+	  				<s:param name='id' value='id' />
+	  			</s:url>
+	  			<s:url action='deleteUser' var='deleteUrl'>
+	  				<s:param name='id' value='id' />
+	  			</s:url>
+	  			<a href="<s:property value='editUrl' />">Edit</a>
+	  			<a href="<s:property value='deleteUrl' />">Delete</a>
 	  		</li>
 		</s:iterator>
        </ol>
-   
+   	<a href="<s:url action='createUser' />">Create</a>
   </body>
 </html>

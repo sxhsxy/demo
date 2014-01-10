@@ -36,5 +36,8 @@
         <property name="remarks" type="java.lang.String">
             <column name="remarks" />
         </property>
+        <many-to-one name="department" class="Department">
+            <column name="department_id" />
+        </many-to-one>
     </class>
 </hibernate-mapping>
