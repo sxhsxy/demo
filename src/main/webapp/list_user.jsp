@@ -24,23 +24,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     This is user_list page. <br>
-<ol>
+    <ol>
          <s:iterator value="userList">
 	  		<li>
 	  			<s:property value="loginName" />
 	  			
 	  			<s:property value="name" /> 
-	  			<s:url action="editUser" var="editUrl">
-	  				<s:param name="id" value="id" />
+	  			<s:url action='editUser' var='editUrl'>
+	  				<s:param name='id' value='id' />
 	  			</s:url>
-	  			<s:url action="deleteUser" var="deleteUrl">
-	  				<s:param name="id" value="id" />
+	  			<s:url action='deleteUser' var='deleteUrl'>
+	  				<s:param name='id' value='id' />
 	  			</s:url>
-	  			<a href="<s:property value='#editUrl' />" >Edit</a>
-	  			<a href="<s:property value='#deleteUrl' />" >Delete</a>
+	  			<a href="<s:property value='editUrl' />">Edit</a>
+	  			<a href="<s:property value='deleteUrl' />">Delete</a>
 	  		</li>
 		</s:iterator>
-</ol>
-   
+       </ol>
+   	<a href="<s:url action='createUser' />">Create</a>
   </body>
 </html>

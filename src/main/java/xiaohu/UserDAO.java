@@ -2,8 +2,10 @@ package xiaohu;
 // default package
 
 import java.util.List;
+
 import org.hibernate.LockOptions;
 import org.hibernate.Query;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Example;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,23 +36,46 @@ public class UserDAO extends BaseHibernateDAO  {
     public void save(User transientInstance) {
         log.debug("saving User instance");
         try {
+        	Transaction trans = getSession().beginTransaction();
             getSession().save(transientInstance);
+            trans.commit();
             log.debug("save successful");
         } catch (RuntimeException re) {
             log.error("save failed", re);
             throw re;
         }
+        finally {
+			closeSession();
+		}
+    }
+    public void update(User transientInstance) {
+        log.debug("updating User instance");
+        try {
+        	Transaction trans = getSession().beginTransaction();
+            getSession().update(transientInstance);
+            trans.commit();
+            log.debug("update successful");
+        } catch (RuntimeException re) {
+            log.error("update failed", re);
+            throw re;
+        }finally {
+			closeSession();
+		}
     }
     
 	public void delete(User persistentInstance) {
         log.debug("deleting User instance");
         try {
+        	Transaction trans = getSession().beginTransaction();
             getSession().delete(persistentInstance);
+            trans.commit();
             log.debug("delete successful");
         } catch (RuntimeException re) {
             log.error("delete failed", re);
             throw re;
-        }
+        }finally {
+			closeSession();
+		}
     }
     
     public User findById( java.lang.Integer id) {
@@ -62,7 +87,9 @@ public class UserDAO extends BaseHibernateDAO  {
         } catch (RuntimeException re) {
             log.error("get failed", re);
             throw re;
-        }
+        }finally {
+			closeSession();
+		}
     }
     
     
@@ -150,10 +177,12 @@ public class UserDAO extends BaseHibernateDAO  {
 		try {
 			String queryString = "from User";
 	         Query queryObject = getSession().createQuery(queryString);
-			 return queryObject.list();
+	         return queryObject.list();
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
 			throw re;
+		}finally {
+			closeSession();
 		}
 	}
 	
