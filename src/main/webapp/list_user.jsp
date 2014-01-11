@@ -30,6 +30,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  			<s:property value="loginName" />
 	  			
 	  			<s:property value="name" /> 
+	  			
+	  			<s:property value="department" />
 	  			<s:url action='editUser' var='editUrl'>
 	  				<s:param name='id' value='id' />
 	  			</s:url>

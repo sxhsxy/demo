@@ -34,9 +34,12 @@
 			<p>
 				<s:textfield name="user.loginName" label="Login name" />
 				<br />
-				<s:textfield name="user.Name" label="Display name" />
+				<s:textfield name="user.name" label="Display name" />
 				<br />
-				<s:textfield name="user.Password" label="Password" />
+				<s:textfield name="user.password" label="Password" />
+				<br />
+				<s:select name="user.department.id" list="departmentList" listKey="id" listValue="name" label="Department" />
+				
 			</p>
 
 			<s:hidden name="user.id" />
@@ -54,6 +57,9 @@
 				<s:textfield name="user.Name" label="Display name" />
 				<br />
 				<s:textfield name="user.Password" label="Password" />
+				<br />
+				<s:select name="user.department.id" list="departmentList" listKey="id" listValue="name" label="Department" />
+				
 			</p>
 
 			<s:hidden name="user.id" />

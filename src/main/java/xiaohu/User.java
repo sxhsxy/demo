@@ -27,7 +27,14 @@ public class User implements java.io.Serializable {
 
     // Constructors
 
-    /** default constructor */
+    @Override
+	public String toString() {
+		return "User [loginName=" + loginName + ", name=" + name + ", gender="
+				+ gender + ", email=" + email + ", phone=" + phone
+				+ ", mobile=" + mobile + ", department=" + department + "]";
+	}
+
+	/** default constructor */
     public User() {
     }
 

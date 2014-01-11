@@ -15,7 +15,7 @@ public class UserService {
 			.getName());
 	private static UserDAO dao = new UserDAO();
 
-	public List<User> list() {
+	public List<User> listAll() {
 
 		return dao.findAll();
 

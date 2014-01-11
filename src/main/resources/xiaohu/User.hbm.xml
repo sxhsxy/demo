@@ -36,7 +36,7 @@
         <property name="remarks" type="java.lang.String">
             <column name="remarks" />
         </property>
-        <many-to-one name="department" class="Department">
+        <many-to-one name="department" class="xiaohu.Department">
             <column name="department_id" />
         </many-to-one>
     </class>
